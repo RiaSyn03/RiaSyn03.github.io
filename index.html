@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kyle Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/00d21fe39e.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -23,21 +25,28 @@
                 </ul>
                 <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
-            <div class="header-text">
+            <div class="row">
+                <div class="about-col-1">
+            <div class="header-text" data-aos="fade-up">
                 <p>Web Developer | Graphic Designer</p>
-                <h1>Hi,<span> I'm Kyle Christian</span> <br>from Cebu</h1>
-            </div>
+                <h1>Hi,<span> I'm Kyle Christian</span></h1>
+              </div>
+        </div>
+        <div >
+           <img src="images/user.png">
+        </div>
         </div>
     </div>
+    <button id="backToTop">↑ Top</button>
     <div id="about">
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="images/user.png">
-                </div>
-                <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
                     <p>My name is Kyle Christian Arches. I live in Malbago Daanbantayan Cebu. I started living in Cebu City when I got to college up until now. My hobbies are playing Video games and Singing. I am an extrovert. I like creating web designs and posters.</p>
+                </div>
+                <div class="about-col-2">
+                    
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills/Traits</p>
                         <p class="tab-links" onclick="opentab('experience')">Experience</p>
@@ -58,13 +67,27 @@
                         <ul>
                             <li><span>Internship</span><br>Graphic Designer (April – August 2019)</li>
                             <li><span>Self Employed</span><br>Photo Editor (2019-2022)</li>
+                            <li><span>Esienbach Consulting (2023-2025)</span>
+                                <br>Maintining the website by fixing bugs on new features from a specific page
+                                <br><br>Adding new features like call to header action, header texts, forms, calendar, etc.
+                                <br><br>Creating REST API
+                                <br><br>Enhancing user interface using different languages such as php, javascript and vue
+                                <br><br>Had moderate knowledge on React
+                                <br><br>Encounter using Next 
+                                <br><br>Knowledgeable on using Codeigniter and Laravel
+                                <br><br>Automation of gathering data using pupeeter library if the client allows
+                                <br><br>Automation on gathering data using the given API from the client
+                                <br><br>Experience using postman for testing API
+                                <br><br>Experience using all versions of chat GPT and Grock
+                                <br><br>Created pages, edit texts and add features in Wordpress
+                            </li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
                             <li><span>Elementary</span><br>Malbago Elementary School (2011)</li>
                             <li><span>Secondary</span><br>Saint Martin de Porres Academy (2015)</li>
-                            <li><span>College</span><br>University of San Carlos Talamban Campus (2015-Present)</li>
+                            <li><span>College</span><br>University of San Carlos Talamban Campus (2023)</li>
                         </ul>
                     </div>
                 </div>
@@ -75,22 +98,22 @@
         <div class="container">
             <div class="sub-title">My Services</div>
             <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Web Design</h2>
+                <div data-aos="zoom-in">
+                  <i class="fa-solid fa-code"></i>
+                  <h2>Web Design</h2>
                 </div>
-                <div>
-                    <i class="fa-solid fa-palette"></i>
-                    <h2>Graphic Artist</h2>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                  <i class="fa-solid fa-palette"></i>
+                  <h2>Graphic Artist</h2>
                 </div>
-            </div>
+              </div>
         </div>
     </div>
 <div id="portfolio">
     <div class="container">
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
-            <div class="work">
+            <div class="work" data-aos="fade-right">
                 <img src="images/work-1.png">
                 <div class="layer">
                     <h3>Web Developer</h3>
@@ -128,7 +151,7 @@
                     <div class="social-icons">
                         <a href="https://www.facebook.com/kylechristianarhces"><i class="fa-brands fa-facebook"></i></a>
                     </div>
-                    <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                    <a href="images/kca-cv.pdf" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
                     <form name="submit-to-google-sheet">
@@ -186,6 +209,24 @@
             })
             .catch(error => console.error('Error!', error.message))
         })
+        const btn = document.getElementById('backToTop');
+    
+        window.onscroll = function () {
+          btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+        };
+    
+        btn.onclick = function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
       </script>
+      <!-- AOS JS -->
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            AOS.init({
+              duration: 1000,     // how long the animation takes
+              once: false,        // re-trigger when the element comes back into view
+              mirror: true        // animate on scroll up as well
+            });
+          </script>
 </body>
 </html>
